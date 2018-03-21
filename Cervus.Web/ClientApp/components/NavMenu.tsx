@@ -1,7 +1,22 @@
 import * as React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { RouteResolver } from 'ClientApp/routing/RouteBinder';
+import { Home } from './Home';
+import { FetchData } from './FetchData';
+import { Counter } from './Counter';
 
-export class NavMenu extends React.Component<{}, {}> {
+export interface NavMenuProps {
+    routeResolver: RouteResolver;
+}
+
+export class NavMenu extends React.Component<NavMenuProps, {}> {
+    _routeResolver: RouteResolver;
+
+    constructor(props?: NavMenuProps) {
+        super(props);
+        this._routeResolver = this.props.routeResolver;        
+    }
+
     public render() {
         return <div className='main-nav'>
                 <div className='navbar navbar-inverse'>
@@ -18,17 +33,17 @@ export class NavMenu extends React.Component<{}, {}> {
                 <div className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
                         <li>
-                            <NavLink exact to={ '/' } activeClassName='active'>
+                            <NavLink to={ this._routeResolver.action(Home) } exact activeClassName='active'>
                                 <span className='glyphicon glyphicon-home'></span> Home
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={ '/counter' } activeClassName='active'>
+                            <NavLink to={ this._routeResolver.action(Counter) } activeClassName='active'>
                                 <span className='glyphicon glyphicon-education'></span> Counter
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={ '/fetchdata' } activeClassName='active'>
+                            <NavLink to={ this._routeResolver.action(FetchData) } activeClassName='active'>
                                 <span className='glyphicon glyphicon-th-list'></span> Fetch data
                             </NavLink>
                         </li>
