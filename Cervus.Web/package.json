@@ -1,8 +1,5 @@
 {
-  "name": "Cervus.Web",
-  "private": true,
-  "version": "0.0.0",
-  "devDependencies": {
+  "dependencies": {
     "@types/history": "4.6.0",
     "@types/react": "15.0.35",
     "@types/react-dom": "15.5.1",
@@ -30,5 +27,13 @@
     "url-loader": "0.5.9",
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.2"
-  }
+  },
+  "devDependencies": {
+    "inversify": "^4.11.1",
+    "inversify-inject-decorators": "^3.1.0",
+    "reflect-metadata": "^0.1.12"
+  },
+  "name": "Cervus.Web",
+  "private": true,
+  "version": "0.0.0"
 }
