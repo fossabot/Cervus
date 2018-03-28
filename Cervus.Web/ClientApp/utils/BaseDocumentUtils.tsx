@@ -1,7 +1,6 @@
 ﻿/*
  * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
  */
-import 'reflect-metadata';
 import { DocumentUtils } from "../types";
 import { injectable } from "inversify";
 

@@ -1,4 +1,5 @@
-﻿import { BaseDocumentUtils } from "../utils/BaseDocumentUtils";
+﻿import * as BindingConstants from "./BindingConstants";
+import { BaseDocumentUtils } from "../utils/BaseDocumentUtils";
 import { BaseRouteBinder } from "../routing/BaseRouteBinder";
 import { Container } from "inversify";
 import { RouteBinder, Dictionary, DocumentUtils, RouteSolver, LazyInjector } from "../types";
@@ -10,24 +11,24 @@ export class StoreFrontModule {
         // This value should somehow be injected into the application
         // from the view itself.
         storeFrontContainer
-            .bind<DocumentUtils>("DocumentUtilsId")
+            .bind<DocumentUtils>(BindingConstants.DocumentUtilsId)
             .toConstantValue(new BaseDocumentUtils(document));
         
         storeFrontContainer
-            .bind<ApiInfo>("ApiInfoId")
+            .bind<ApiInfo>(BindingConstants.ApiInfoId)
             .toConstantValue(new ApiInfo(storeFrontContainer
-                .get<DocumentUtils>("DocumentUtilsId")
+                .get<DocumentUtils>(BindingConstants.DocumentUtilsId)
                 .getAttributeString("apiUrl")));
 
         storeFrontContainer
-            .bind<RouteBinder>("RouteBinderId")
+            .bind<RouteBinder>(BindingConstants.RouteBinderId)
             .toConstantValue(new BaseRouteBinder());
 
         storeFrontContainer
-            .bind<RouteSolver>("RouteSolverId")
+            .bind<RouteSolver>(BindingConstants.RouteSolverId)
             .toDynamicValue(interfaces => interfaces
                 .container
-                .get<RouteBinder>("RouteBinderId")
+                .get<RouteBinder>(BindingConstants.RouteBinderId)
                 .build());
 
         return storeFrontContainer;

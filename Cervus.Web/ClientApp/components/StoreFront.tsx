@@ -1,7 +1,7 @@
 /*
  * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
  */
-import 'reflect-metadata';
+import * as BindingConstants from "../utils/BindingConstants";
 import * as React from 'react';
 import { lazyInject } from '../storeFront';
 import { Route } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { StoreFrontLayout } from './StoreFrontLayout';
 
 export class StoreFront extends React.Component<DefaultReactProps, {}> {
 
-    @lazyInject("RouteBinderId")
+    @lazyInject(BindingConstants.RouteBinderId)
     private routeBinder: RouteBinder;
 
     public render() {

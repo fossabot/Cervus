@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import * as BindingConstants from "../utils/BindingConstants";
 import * as React from 'react';
 import { lazyInject } from '../storeFront';
 import { Link, NavLink } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { RouteSolver, DefaultReactProps } from '../types';
 
 export class NavMenu extends React.Component<DefaultReactProps, {}> {
 
-    @lazyInject("RouteSolverId")
+    @lazyInject(BindingConstants.RouteSolverId)
     private routeResolver: RouteSolver;
 
     public render() {

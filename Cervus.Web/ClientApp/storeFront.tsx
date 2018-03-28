@@ -1,6 +1,7 @@
 /*
  * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
  */
+import 'reflect-metadata';
 import getDecorators from "inversify-inject-decorators";
 import { Container } from "inversify";
 import { StoreFrontModule } from './utils/StoreFrontModule';

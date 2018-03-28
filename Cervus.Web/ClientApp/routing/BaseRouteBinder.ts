@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { injectable } from "inversify";
 import { BaseRouteSolver } from "./BaseRouteSolver";
 import { RouteComponentProps } from "react-router";

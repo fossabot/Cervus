@@ -1,5 +1,4 @@
-﻿import 'reflect-metadata';
-import { injectable } from "inversify";
+﻿import { injectable } from "inversify";
 import { RouteComponentProps } from "react-router";
 import { RouteSolver, ReactComponentClass, Dictionary, KeyValuePair, Named } from "../types";
 

@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import * as BindingConstants from "../utils/BindingConstants";
 import * as React from 'react';
 import { lazyInject } from '../storeFront';
 import { NavMenu } from './NavMenu';
@@ -7,7 +7,7 @@ import { RouteComponentProps } from 'react-router';
 
 export class StoreFrontLayout extends React.Component<DefaultReactProps, {}> {
 
-    @lazyInject("RouteSolverId")
+    @lazyInject(BindingConstants.RouteSolverId)
     private routeResolver: RouteSolver;
 
     public render() {

@@ -1,6 +1,8 @@
-import 'reflect-metadata';
 import 'isomorphic-fetch';
+import * as BindingConstants from "../utils/BindingConstants";
 import * as React from 'react';
+import { ApiInfo } from '../utils/ApiInfo';
+import { lazyInject } from '../storeFront';
 import { RouteComponentProps } from 'react-router';
 
 interface FetchDataExampleState {
@@ -15,6 +17,9 @@ interface ChuckNorrisJokeState {
 
 export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNorrisJokeState> {
 
+    @lazyInject(BindingConstants.ApiInfoId)
+    private apiInfo: ApiInfo;
+
     constructor() {
         super();
         this.state = {
@@ -22,11 +27,11 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNor
             loading: true
         };
 
-        //fetch('/jokes/random')
-        //    .then(response => response.json() as Promise<ChuckNorrisJoke>)
-        //    .then(data => {
-        //        this.setState({ joke: JSON.parse(data.value), loading: false });
-        //    });
+        fetch(this.apiInfo.getApiUrl() + '/jokes/random')
+            .then(response => response.json() as Promise<ChuckNorrisJoke>)
+            .then(data => {
+                this.setState({ joke: data, loading: false });
+            });
     }
 
     public render() {
