@@ -10,7 +10,7 @@ import { RouteSolver, DefaultReactProps } from '../types';
 export class NavMenu extends React.Component<DefaultReactProps, {}> {
 
     @lazyInject(BindingConstants.RouteSolverId)
-    private routeResolver: RouteSolver;
+    private readonly routeResolver: RouteSolver;
 
     public render() {
         return <div className='main-nav'>

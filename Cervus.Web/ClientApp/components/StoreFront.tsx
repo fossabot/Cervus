@@ -12,7 +12,7 @@ import { StoreFrontLayout } from './StoreFrontLayout';
 export class StoreFront extends React.Component<DefaultReactProps, {}> {
 
     @lazyInject(BindingConstants.RouteBinderId)
-    private routeBinder: RouteBinder;
+    private readonly routeBinder: RouteBinder;
 
     public render() {
         const routes = this.routeBinder

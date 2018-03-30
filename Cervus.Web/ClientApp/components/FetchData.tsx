@@ -18,7 +18,7 @@ interface ChuckNorrisJokeState {
 export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNorrisJokeState> {
 
     @lazyInject(BindingConstants.ApiInfoId)
-    private apiInfo: ApiInfo;
+    private readonly apiInfo: ApiInfo;
 
     constructor() {
         super();

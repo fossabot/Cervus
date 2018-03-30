@@ -1,5 +1,8 @@
 ﻿import { injectable } from "inversify";
 
+/**
+ * Represents an ApiInfo object for a specific api.
+ */
 @injectable()
 export class ApiInfo
 {

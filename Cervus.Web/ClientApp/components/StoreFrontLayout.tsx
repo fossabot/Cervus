@@ -8,7 +8,7 @@ import { RouteComponentProps } from 'react-router';
 export class StoreFrontLayout extends React.Component<DefaultReactProps, {}> {
 
     @lazyInject(BindingConstants.RouteSolverId)
-    private routeResolver: RouteSolver;
+    private readonly routeResolver: RouteSolver;
 
     public render() {
         return <div className='container-fluid'>
