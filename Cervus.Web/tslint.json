@@ -1,0 +1,14 @@
+﻿{
+  "extends": [ "tslint:latest", "tslint-react" ],
+  "rules": {
+    // override rules here
+    "max-line-length": {
+      "options": [ 120 ]
+    }
+  },
+  "jsRules": {
+    "max-line-length": {
+      "options": [ 120 ]
+    }
+  }
+}
