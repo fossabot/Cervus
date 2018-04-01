@@ -2,13 +2,15 @@
  * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
  */
 import { RouteComponentProps } from "react-router";
-import { interfaces } from "inversify";
+import { interfaces, Container } from "inversify";
+import { DOMAttributes } from "react";
 
 export type ReactComponentClass = React.ComponentClass<RouteComponentProps<any> | undefined>;
 export type Dictionary<TValue> = { [index: string]: TValue };
 export type KeyValuePair<TKey, TValue> = { key: TKey, value: TValue };
 export type Named = { name: string };
 export type DefaultReactProps = { children?: React.ReactNode };
+export type ReactEntryPointClass = React.ComponentClass<DefaultReactProps | undefined>;
 export type LazyInjector = (serviceIdentifier: string | symbol | interfaces.Newable<any> | interfaces.Abstract<any>) => (proto: any, key: string) => void;
 
 /**
@@ -54,6 +56,10 @@ export interface RouteSolver {
      * @returns {string} - The path that the component is bound to.
      */
     action(type: ReactComponentClass): string;
+}
+
+export interface ContainerModule {
+    load(container: Container): void;
 }
 
 export interface DocumentUtils {

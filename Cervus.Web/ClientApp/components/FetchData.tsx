@@ -2,13 +2,8 @@ import 'isomorphic-fetch';
 import * as BindingConstants from "../utils/BindingConstants";
 import * as React from 'react';
 import { ApiInfo } from '../utils/ApiInfo';
-import { lazyInject } from '../storeFront';
+import { Context } from "../context";
 import { RouteComponentProps } from 'react-router';
-
-interface FetchDataExampleState {
-    forecasts: WeatherForecast[];
-    loading: boolean;
-}
 
 interface ChuckNorrisJokeState {
     joke?: ChuckNorrisJoke;
@@ -17,7 +12,7 @@ interface ChuckNorrisJokeState {
 
 export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNorrisJokeState> {
 
-    @lazyInject(BindingConstants.ApiInfoId)
+    @Context.lazyInject(BindingConstants.ApiInfoId)
     private readonly apiInfo: ApiInfo;
 
     constructor() {

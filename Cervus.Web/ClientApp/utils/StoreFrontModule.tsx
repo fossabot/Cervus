@@ -1,36 +1,43 @@
 ﻿import * as BindingConstants from "./BindingConstants";
-import { BaseDocumentUtils } from "../utils/BaseDocumentUtils";
+import { BaseDocumentUtils } from "./BaseDocumentUtils";
 import { BaseRouteBinder } from "../routing/BaseRouteBinder";
 import { Container } from "inversify";
-import { RouteBinder, Dictionary, DocumentUtils, RouteSolver, LazyInjector } from "../types";
-import { ApiInfo } from "../utils/ApiInfo";
+import { RouteBinder, Dictionary, DocumentUtils, RouteSolver, LazyInjector, ContainerModule } from "../types";
+import { ApiInfo } from "./ApiInfo";
+import { ReactNode } from "react";
+import { AppStoreRoutingConfig } from "./appStoreRoutingConfig";
 
-export class StoreFrontModule {
+export class StoreFrontModule implements ContainerModule {
 
-    load(storeFrontContainer: Container) {
-        // This value should somehow be injected into the application
-        // from the view itself.
-        storeFrontContainer
+    load(container: Container) {
+        container
             .bind<DocumentUtils>(BindingConstants.DocumentUtilsId)
             .toConstantValue(new BaseDocumentUtils(document));
-        
-        storeFrontContainer
-            .bind<ApiInfo>(BindingConstants.ApiInfoId)
-            .toConstantValue(new ApiInfo(storeFrontContainer
-                .get<DocumentUtils>(BindingConstants.DocumentUtilsId)
-                .getAttributeString("apiUrl")));
 
-        storeFrontContainer
+        const apiInfo = new ApiInfo(container
+            .get<DocumentUtils>(BindingConstants.DocumentUtilsId)
+            .getAttributeString("apiUrl"))
+
+        container
+            .bind<ApiInfo>(BindingConstants.ApiInfoId)
+            .toConstantValue(apiInfo);
+
+        container
             .bind<RouteBinder>(BindingConstants.RouteBinderId)
             .toConstantValue(new BaseRouteBinder());
 
-        storeFrontContainer
+        AppStoreRoutingConfig.bindRoutes(
+            container.get<RouteBinder>(BindingConstants.RouteBinderId),
+            container.get<DocumentUtils>(BindingConstants.DocumentUtilsId)
+                .getAttribute<Dictionary<string>>("uris"));
+
+        container
             .bind<RouteSolver>(BindingConstants.RouteSolverId)
             .toDynamicValue(interfaces => interfaces
                 .container
                 .get<RouteBinder>(BindingConstants.RouteBinderId)
                 .build());
 
-        return storeFrontContainer;
+        return container;
     }
 }

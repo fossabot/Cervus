@@ -9,7 +9,7 @@ module.exports = (env) => {
     return [{
         stats: { modules: false },
         entry: {
-            storeFront: './ClientApp/storeFront.tsx'
+            storeFront: './ClientApp/storeFrontApp.tsx'
         },
         resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
         output: {

@@ -1,6 +1,6 @@
 import * as BindingConstants from "../utils/BindingConstants";
 import * as React from 'react';
-import { lazyInject } from '../storeFront';
+import { Context } from "../context";
 import { Link, NavLink } from 'react-router-dom';
 import { Home } from './Home';
 import { FetchData } from './FetchData';
@@ -9,7 +9,7 @@ import { RouteSolver, DefaultReactProps } from '../types';
 
 export class NavMenu extends React.Component<DefaultReactProps, {}> {
 
-    @lazyInject(BindingConstants.RouteSolverId)
+    @Context.lazyInject(BindingConstants.RouteSolverId)
     private readonly routeResolver: RouteSolver;
 
     public render() {
