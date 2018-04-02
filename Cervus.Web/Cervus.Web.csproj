@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="CustomConfigs\" />
+    <Folder Include="ServerApp\" />
   </ItemGroup>
 
   <ItemGroup>

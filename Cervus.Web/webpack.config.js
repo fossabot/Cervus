@@ -9,9 +9,11 @@ module.exports = (env) => {
     return [{
         stats: { modules: false },
         entry: {
-            storeFront: './ClientApp/storeFrontApp.tsx'
+            storeFront: './ClientApp/storeFrontApp.ts'
         },
-        resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        resolve: {
+            extensions: ['.js', '.jsx', '.ts', '.tsx']
+        },
         output: {
             path: path.join(__dirname, bundleOutputDir),
             filename: '[name].js',

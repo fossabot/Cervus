@@ -1,17 +1,29 @@
 ﻿/*
  * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
  */
-import { RouteComponentProps } from "react-router";
-import { interfaces, Container } from "inversify";
+import { Container, interfaces } from "inversify";
 import { DOMAttributes } from "react";
+import { RouteComponentProps } from "react-router";
 
 export type ReactComponentClass = React.ComponentClass<RouteComponentProps<any> | undefined>;
-export type Dictionary<TValue> = { [index: string]: TValue };
-export type KeyValuePair<TKey, TValue> = { key: TKey, value: TValue };
-export type Named = { name: string };
-export type DefaultReactProps = { children?: React.ReactNode };
 export type ReactEntryPointClass = React.ComponentClass<DefaultReactProps | undefined>;
-export type LazyInjector = (serviceIdentifier: string | symbol | interfaces.Newable<any> | interfaces.Abstract<any>) => (proto: any, key: string) => void;
+
+export interface Dictionary<TValue> {
+    [index: string]: TValue;
+}
+
+export interface KeyValuePair<TKey, TValue> {
+    key: TKey;
+    value: TValue;
+}
+
+export interface Named {
+    name: string;
+}
+
+export interface DefaultReactProps {
+    children?: React.ReactNode;
+}
 
 /**
  * @module types/RouteBinder
@@ -32,7 +44,7 @@ export interface RouteBinder {
      * Gets the bound routes into a key value pair so that they can be set into the
      * router.
      */
-    getRoutes(): KeyValuePair<ReactComponentClass, string>[];
+    getRoutes(): Array<KeyValuePair<ReactComponentClass, string>>;
 
     /**
      * Builds a RouteSolver which allows the bound actions to be fetched from

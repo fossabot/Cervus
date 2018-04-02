@@ -24,6 +24,3 @@ export class BaseRouteSolver implements RouteSolver {
         return this.mappedTypes[typeName].value;
     }
 }
-/*
- * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
- */

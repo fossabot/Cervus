@@ -1,11 +1,11 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import getDecorators from "inversify-inject-decorators";
-import { AppContainer } from 'react-hot-loader';
-import { BrowserRouter } from 'react-router-dom';
+import { AppContainer } from "react-hot-loader";
+import { BrowserRouter } from "react-router-dom";
 import { Container, interfaces } from "inversify";
-import { Context } from './context';
-import { ReactNode, DOMAttributes } from 'react';
+import { Context } from "./context";
+import { ReactNode, DOMAttributes } from "react";
 import { ReactEntryPointClass, ContainerModule } from "./types";
 
 /**
@@ -33,8 +33,8 @@ export class AppContext {
      * dependencies.
      */
     public runModules(...containerModules: ContainerModule[]): AppContext {
-        for (let currIdx = 0; currIdx < containerModules.length; currIdx++) {
-            containerModules[currIdx].load(this.container);
+        for (const currentModule of containerModules) {
+            currentModule.load(this.container);
         }
 
         return this;
@@ -50,13 +50,12 @@ export class AppContext {
         // This code starts up the React app when it runs in a browser. It sets up the routing
         // configuration and injects the app into a DOM element.
         const entryPointNode = React.createElement(entryPoint);
-        const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href')!;
+        const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href")!;
 
         ReactDOM.render(
             <AppContainer>
                 <BrowserRouter children={entryPointNode} basename={baseUrl} />
             </AppContainer>,
-            document.getElementById('react-app')
-        );
+            document.getElementById("react-app"));
     }
 }

@@ -20,17 +20,17 @@ export class BaseRouteBinder implements RouteBinder {
      * @param {ReactComponentClass} type - A component to bind an action to.
      * @param {string} action - The path to bind the component to.
      */
-    bind(type: ReactComponentClass, action: string): void {
+    public bind(type: ReactComponentClass, action: string): void {
         if (!type) {
             throw new Error("Type is invalid!");
         }
-        
-        const typeAsNamed = <Named>(<any>type);
+
+        const typeAsNamed = (type as any) as Named;
         const typeName = typeAsNamed.name;
         if (!typeName) {
             throw new Error("Type is invalid!");
         }
-        
+
         this.mappedTypes[typeName] = {
             key: type,
             value: action
@@ -43,7 +43,7 @@ export class BaseRouteBinder implements RouteBinder {
      * @returns {RouteSolver} - A readonly container of routes that can resolve
      * a component to a path.s
      */
-    getRoutes(): KeyValuePair<ReactComponentClass, string>[] {
+    public getRoutes(): Array<KeyValuePair<ReactComponentClass, string>> {
         return Object
             .keys(this.mappedTypes)
             .map(key => {
@@ -59,10 +59,7 @@ export class BaseRouteBinder implements RouteBinder {
      * Gets the bound routes into a key value pair so that they can be set into the
      * router.
      */
-    build(): RouteSolver {
+    public build(): RouteSolver {
         return new BaseRouteSolver(this.mappedTypes);
     }
 }
-/*
- * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
- */

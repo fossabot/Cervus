@@ -1,11 +1,11 @@
 ﻿import * as BindingConstants from "./BindingConstants";
+import { ApiInfo } from "./ApiInfo";
+import { AppStoreRoutingConfig } from "./appStoreRoutingConfig";
 import { BaseDocumentUtils } from "./BaseDocumentUtils";
 import { BaseRouteBinder } from "../routing/BaseRouteBinder";
 import { Container } from "inversify";
-import { RouteBinder, Dictionary, DocumentUtils, RouteSolver, LazyInjector, ContainerModule } from "../types";
-import { ApiInfo } from "./ApiInfo";
+import { ContainerModule, Dictionary, DocumentUtils, RouteBinder, RouteSolver } from "../types";
 import { ReactNode } from "react";
-import { AppStoreRoutingConfig } from "./appStoreRoutingConfig";
 
 export class StoreFrontModule implements ContainerModule {
 
@@ -16,7 +16,7 @@ export class StoreFrontModule implements ContainerModule {
 
         const apiInfo = new ApiInfo(container
             .get<DocumentUtils>(BindingConstants.DocumentUtilsId)
-            .getAttributeString("apiUrl"))
+            .getAttributeString("apiUrl"));
 
         container
             .bind<ApiInfo>(BindingConstants.ApiInfoId)

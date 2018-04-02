@@ -1,6 +1,7 @@
 /*
  * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
  */
+"use strict"
 import './css/site.css';
 import 'bootstrap';
 import 'reflect-metadata';
