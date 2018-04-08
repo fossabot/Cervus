@@ -5,7 +5,7 @@ import { FetchData } from "./FetchData";
 import { Home } from "./Home";
 import { Context } from "../iocContext";
 import { DefaultReactProps, RouteSolver } from "../types";
-import * as BindingConstants from "../utils/BindingConstants";
+import * as BindingConstants from "../ioc/BindingConstants";
 
 export class NavMenu extends React.Component<DefaultReactProps, {}> {
 

@@ -1,13 +1,10 @@
-/*
- * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
- */
-import * as BindingConstants from "../utils/BindingConstants";
-import * as React from 'react';
+import * as React from "react";
+import { RouteComponentProps } from "react-router";
+import { Route } from "react-router-dom";
 import { Context } from "../iocContext";
-import { Route } from 'react-router-dom';
-import { RouteBinder, DefaultReactProps } from '../types';
-import { RouteComponentProps } from 'react-router';
-import { StoreFrontLayout } from './StoreFrontLayout';
+import * as BindingConstants from "../ioc/BindingConstants";
+import { DefaultReactProps, RouteBinder } from "../types";
+import { StoreFrontLayout } from "./StoreFrontLayout";
 
 export class StoreFront extends React.Component<DefaultReactProps, {}> {
 

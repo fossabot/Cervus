@@ -1,9 +1,9 @@
 import "isomorphic-fetch";
-import * as BindingConstants from "../utils/BindingConstants";
 import * as React from "react";
-import { ApiInfo } from "../utils/ApiInfo";
-import { Context } from "../iocContext";
 import { RouteComponentProps } from "react-router";
+import { Context } from "../iocContext";
+import * as BindingConstants from "../ioc/BindingConstants";
+import { ApiInfo } from "../utils/ApiInfo";
 
 interface ChuckNorrisJokeState {
     joke?: ChuckNorrisJoke;
@@ -11,6 +11,17 @@ interface ChuckNorrisJokeState {
 }
 
 export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNorrisJokeState> {
+
+    private static renderJoke(joke?: ChuckNorrisJoke) {
+        if (!joke) {
+            return <div></div>;
+        }
+
+        return <div>
+            <h1 className="table">{joke.value}</h1>
+            {joke.category && <text>{joke.value}</text>}
+        </div>;
+    }
 
     @Context.lazyInject(BindingConstants.ApiInfoId)
     private readonly apiInfo: ApiInfo;
@@ -30,7 +41,7 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNor
     }
 
     public render() {
-        let contents = this.state.loading
+        const contents = this.state.loading
             ? <p><em>Loading...</em></p>
             : FetchData.renderJoke(this.state.joke);
 
@@ -38,17 +49,6 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNor
             <h1>Weather forecast</h1>
             <p>This component demonstrates fetching data from the server.</p>
             { contents }
-        </div>;
-    }
-
-    private static renderJoke(joke?: ChuckNorrisJoke) {
-        if (!joke) {
-            return <div></div>;
-        }
-
-        return <div>
-            <h1 className="table">{joke.value}</h1>
-            {joke.category && <text>{joke.value}</text>}
         </div>;
     }
 }

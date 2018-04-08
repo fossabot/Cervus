@@ -1,7 +1,7 @@
-﻿import { RouteBinder, Dictionary } from "../types";
+﻿import { Counter } from "../components/Counter";
 import { FetchData } from "../components/FetchData";
-import { Counter } from "../components/Counter";
 import { Home } from "../components/Home";
+import { RouteBinder, Dictionary } from "../types";
 
 export module AppStoreRoutingConfig {
     export function bindRoutes(routeBinder: RouteBinder, uris: Dictionary<string>) {
