@@ -1,9 +1,9 @@
-import 'isomorphic-fetch';
+import "isomorphic-fetch";
 import * as BindingConstants from "../utils/BindingConstants";
-import * as React from 'react';
-import { ApiInfo } from '../utils/ApiInfo';
-import { Context } from "../context";
-import { RouteComponentProps } from 'react-router';
+import * as React from "react";
+import { ApiInfo } from "../utils/ApiInfo";
+import { Context } from "../iocContext";
+import { RouteComponentProps } from "react-router";
 
 interface ChuckNorrisJokeState {
     joke?: ChuckNorrisJoke;
@@ -22,7 +22,7 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNor
             loading: true
         };
 
-        fetch(this.apiInfo.getApiUrl() + '/jokes/random')
+        fetch(this.apiInfo.getApiUrl() + "/jokes/random")
             .then(response => response.json() as Promise<ChuckNorrisJoke>)
             .then(data => {
                 this.setState({ joke: data, loading: false });
@@ -47,7 +47,7 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNor
         }
 
         return <div>
-            <h1 className='table'>{joke.value}</h1>
+            <h1 className="table">{joke.value}</h1>
             {joke.category && <text>{joke.value}</text>}
         </div>;
     }

@@ -1,15 +1,20 @@
-﻿import * as BindingConstants from "./BindingConstants";
-import { ApiInfo } from "./ApiInfo";
-import { AppStoreRoutingConfig } from "./appStoreRoutingConfig";
-import { BaseDocumentUtils } from "./BaseDocumentUtils";
-import { BaseRouteBinder } from "../routing/BaseRouteBinder";
+﻿import * as BindingConstants from "../utils/BindingConstants";
 import { Container } from "inversify";
-import { ContainerModule, Dictionary, DocumentUtils, RouteBinder, RouteSolver } from "../types";
 import { ReactNode } from "react";
+import { StoreFront } from "../components/StoreFront";
+import { BaseRouteBinder } from "../routing/BaseRouteBinder";
+import { ContainerModule, Dictionary, DocumentUtils, ReactEntryPointClass, RouteBinder, RouteSolver } from "../types";
+import { ApiInfo } from "../utils/ApiInfo";
+import { AppStoreRoutingConfig } from "../utils/appStoreRoutingConfig";
+import { BaseDocumentUtils } from "../utils/BaseDocumentUtils";
 
 export class StoreFrontModule implements ContainerModule {
 
-    load(container: Container) {
+    public load(container: Container) {
+        container
+            .bind<ReactEntryPointClass>("main")
+            .toConstantValue(StoreFront);
+
         container
             .bind<DocumentUtils>(BindingConstants.DocumentUtilsId)
             .toConstantValue(new BaseDocumentUtils(document));

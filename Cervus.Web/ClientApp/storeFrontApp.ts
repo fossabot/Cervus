@@ -1,20 +1,11 @@
-/*
- * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
- */
-"use strict"
-import './css/site.css';
-import 'bootstrap';
-import 'reflect-metadata';
-import { AppContext } from "./AppContext";
+import "bootstrap";
+import "reflect-metadata";
+import "./css/site.css";
+import { ReactAppStarter } from "./ReactAppStarter";
 
 // Setup the context for the current app.
-const context = new AppContext();
+const starter = new ReactAppStarter("storeFront-app",
+    "./ioc/StoreFrontModule", "StoreFrontModule");
 
-import { StoreFrontModule } from './utils/StoreFrontModule';
-import { StoreFront } from "./components/StoreFront";
-
-// Bind the modules for this app and...
 // Start the app!
-const container = context
-    .runModules(new StoreFrontModule())
-    .start(StoreFront);
+starter.start();

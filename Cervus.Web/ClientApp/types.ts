@@ -1,7 +1,4 @@
-﻿/*
- * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
- */
-import { Container, interfaces } from "inversify";
+﻿import { Container, interfaces } from "inversify";
 import { DOMAttributes } from "react";
 import { RouteComponentProps } from "react-router";
 

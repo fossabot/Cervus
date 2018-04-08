@@ -1,7 +1,4 @@
-﻿/*
- * Guidelines used: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
- */
-import { DocumentUtils } from "../types";
+﻿import { DocumentUtils } from "../types";
 import { injectable } from "inversify";
 
 @injectable()
@@ -12,7 +9,7 @@ export class BaseDocumentUtils implements DocumentUtils {
         this.document = document;
     }
 
-    getAttribute<T>(attributeId: string): T {        
+    getAttribute<T>(attributeId: string): T {
         return JSON.parse(this.getAttributeAux(attributeId));
     }
 
