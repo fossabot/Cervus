@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import * as BindingConstants from "../ioc/BindingConstants";
-import { Context } from "../iocContext";
+import { Context } from "../ioc/iocContext";
 import { DefaultReactProps, RouteSolver } from "../types";
 import { Counter } from "./Counter";
 import { FetchData } from "./FetchData";

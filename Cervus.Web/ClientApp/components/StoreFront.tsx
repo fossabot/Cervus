@@ -3,7 +3,7 @@ import { RouteComponentProps } from "react-router";
 import { Route } from "react-router-dom";
 
 import * as BindingConstants from "../ioc/BindingConstants";
-import { Context } from "../iocContext";
+import { Context } from "../ioc/iocContext";
 import { DefaultReactProps, RouteBinder } from "../types";
 import { StoreFrontLayout } from "./StoreFrontLayout";
 

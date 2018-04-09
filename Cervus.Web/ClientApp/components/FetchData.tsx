@@ -3,7 +3,7 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 
 import * as BindingConstants from "../ioc/BindingConstants";
-import { Context } from "../iocContext";
+import { Context } from "../ioc/iocContext";
 import { ApiInfo } from "../utils/ApiInfo";
 
 interface ChuckNorrisJokeState {
