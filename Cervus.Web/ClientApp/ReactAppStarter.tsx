@@ -1,10 +1,10 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { Context } from "./ioc/iocContext";
 import { Container, interfaces } from "inversify";
 import getDecorators from "inversify-inject-decorators";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import { BrowserRouter } from "react-router-dom";
+import { Lazy } from "./ioc/Lazy";
 import { ContainerModule, Dictionary, ReactEntryPointClass } from "./types";
 
 /**
@@ -47,7 +47,7 @@ export class ReactAppStarter {
 
         // Create the IoC - DI container.
         const container = new Container();
-        Context.setDecorators(getDecorators(container, false));
+        Lazy.setDecorators(getDecorators(container, false));
 
         // Get the main module, this operation may take a while.
         this.getMainModule(this.moduleLocation, this.moduleName).then(module => {

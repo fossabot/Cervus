@@ -3,7 +3,7 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 
 import * as BindingConstants from "../ioc/BindingConstants";
-import { Context } from "../ioc/iocContext";
+import { Lazy } from "../ioc/Lazy";
 import { ApiInfo } from "../utils/ApiInfo";
 
 interface ChuckNorrisJokeState {
@@ -24,7 +24,7 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNor
         </div>;
     }
 
-    @Context.lazyInject(BindingConstants.ApiInfoId)
+    @Lazy.inject(BindingConstants.ApiInfoId)
     private readonly apiInfo: ApiInfo;
 
     constructor() {

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import * as BindingConstants from "../ioc/BindingConstants";
-import { Context } from "../ioc/iocContext";
+import { Lazy } from "../ioc/Lazy";
 import { DefaultReactProps, RouteSolver } from "../types";
 import { Counter } from "./Counter";
 import { FetchData } from "./FetchData";
@@ -10,7 +10,7 @@ import { Home } from "./Home";
 
 export class NavMenu extends React.Component<DefaultReactProps, {}> {
 
-    @Context.lazyInject(BindingConstants.RouteSolverId)
+    @Lazy.inject(BindingConstants.RouteSolverId)
     private readonly routeResolver: RouteSolver;
 
     public render() {
