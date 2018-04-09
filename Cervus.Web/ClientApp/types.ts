@@ -1,6 +1,6 @@
 ﻿import { Container, interfaces } from "inversify";
 import { DOMAttributes } from "react";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps } from "react-router-dom";
 
 export type ReactComponentClass = React.ComponentClass<RouteComponentProps<any> | undefined>;
 export type ReactEntryPointClass = React.ComponentClass<DefaultReactProps | undefined>;
