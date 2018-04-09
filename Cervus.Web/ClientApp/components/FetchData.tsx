@@ -1,10 +1,10 @@
-import 'isomorphic-fetch';
-import * as React from 'react';
-import { RouteComponentProps } from 'react-router';
+import "isomorphic-fetch";
+import * as React from "react";
+import { RouteComponentProps } from "react-router";
 
-import * as BindingConstants from '../ioc/BindingConstants';
-import { Context } from '../iocContext';
-import { ApiInfo } from '../utils/ApiInfo';
+import * as BindingConstants from "../ioc/BindingConstants";
+import { Context } from "../iocContext";
+import { ApiInfo } from "../utils/ApiInfo";
 
 interface ChuckNorrisJokeState {
     joke?: ChuckNorrisJoke;
@@ -49,7 +49,7 @@ export class FetchData extends React.Component<RouteComponentProps<{}>, ChuckNor
         return <div>
             <h1>Weather forecast</h1>
             <p>This component demonstrates fetching data from the server.</p>
-            { contents }
+            {contents}
         </div>;
     }
 }

@@ -1,8 +1,9 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
+
 import * as BindingConstants from "../ioc/BindingConstants";
-import { NavMenu } from "./NavMenu";
 import { DefaultReactProps } from "../types";
+import { NavMenu } from "./NavMenu";
 
 export class StoreFrontLayout extends React.Component<DefaultReactProps, {}> {
 
@@ -13,7 +14,7 @@ export class StoreFrontLayout extends React.Component<DefaultReactProps, {}> {
                     <NavMenu />
                 </div>
                 <div className="col-sm-9">
-                    { this.props.children }
+                    {this.props.children}
                 </div>
             </div>
         </div>;
