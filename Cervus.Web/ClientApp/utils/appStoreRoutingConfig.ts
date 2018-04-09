@@ -1,10 +1,10 @@
 ﻿import { Counter } from "../components/Counter";
 import { FetchData } from "../components/FetchData";
 import { Home } from "../components/Home";
-import { RouteBinder, Dictionary } from "../types";
+import { Dictionary, RouteBinder } from "../types";
 
-export module AppStoreRoutingConfig {
-    export function bindRoutes(routeBinder: RouteBinder, uris: Dictionary<string>) {
+export class AppStoreRoutingConfig {
+    public static bindRoutes(routeBinder: RouteBinder, uris: Dictionary<string>) {
         // Bind the routes per component. These routes should be fed
         // by the server.
         routeBinder.bind(FetchData, uris.fetchData);

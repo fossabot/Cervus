@@ -1,5 +1,6 @@
 ﻿import { injectable } from "inversify";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps } from "react-router-dom";
+
 import { Dictionary, KeyValuePair, Named, ReactComponentClass, RouteSolver } from "../types";
 
 /**

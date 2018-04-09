@@ -31,7 +31,7 @@ export class NavMenu extends React.Component<DefaultReactProps, {}> {
                 <div className="navbar-collapse collapse">
                     <ul className="nav navbar-nav">
                         <li>
-                            <NavLink to={homeAction} exact activeClassName="active">
+                            <NavLink to={homeAction} exact={true} activeClassName="active">
                                 <span className="glyphicon glyphicon-home"></span> Home
                             </NavLink>
                         </li>

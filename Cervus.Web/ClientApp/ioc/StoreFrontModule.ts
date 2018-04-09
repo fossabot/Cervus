@@ -1,12 +1,13 @@
 ﻿import { Container } from "inversify";
 import { ReactNode } from "react";
-import * as BindingConstants from "./bindingConstants";
+
 import { StoreFront } from "../components/StoreFront";
 import { BaseRouteBinder } from "../routing/BaseRouteBinder";
 import { ContainerModule, Dictionary, DocumentUtils, ReactEntryPointClass, RouteBinder, RouteSolver } from "../types";
 import { ApiInfo } from "../utils/ApiInfo";
 import { AppStoreRoutingConfig } from "../utils/appStoreRoutingConfig";
 import { BaseDocumentUtils } from "../utils/BaseDocumentUtils";
+import * as BindingConstants from "./bindingConstants";
 
 export class StoreFrontModule implements ContainerModule {
 

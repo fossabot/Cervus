@@ -1,5 +1,6 @@
-﻿import { DocumentUtils } from "../types";
-import { injectable } from "inversify";
+﻿import { injectable } from "inversify";
+
+import { DocumentUtils } from "../types";
 
 @injectable()
 export class BaseDocumentUtils implements DocumentUtils {
@@ -9,11 +10,11 @@ export class BaseDocumentUtils implements DocumentUtils {
         this.document = document;
     }
 
-    getAttribute<T>(attributeId: string): T {
+    public getAttribute<T>(attributeId: string): T {
         return JSON.parse(this.getAttributeAux(attributeId));
     }
 
-    getAttributeString(attributeId: string): string {
+    public getAttributeString(attributeId: string): string {
         return this.getAttributeAux(attributeId);
     }
 
@@ -25,7 +26,7 @@ export class BaseDocumentUtils implements DocumentUtils {
 
         const attributeValue = script.getAttribute(attributeId);
         if (!attributeValue) {
-            throw new Error("Attribute with Id ${attributeId} doesn't exist in the current document!");
+            throw new Error(`Attribute with Id ${attributeId} doesn't exist in the current document!`);
         }
 
         return attributeValue;

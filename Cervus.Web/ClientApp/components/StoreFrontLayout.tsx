@@ -1,5 +1,5 @@
 import * as React from "react";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps } from "react-router-dom";
 
 import * as BindingConstants from "../ioc/BindingConstants";
 import { DefaultReactProps } from "../types";
