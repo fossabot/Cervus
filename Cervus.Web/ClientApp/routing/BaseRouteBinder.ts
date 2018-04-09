@@ -1,8 +1,11 @@
 import { injectable } from "inversify";
 import { RouteComponentProps } from "react-router-dom";
 
+import {
+    Dictionary, KeyValuePair, Named,
+    ReactComponentClass, RouteBinder, RouteSolver
+} from "../types";
 import { BaseRouteSolver } from "./BaseRouteSolver";
-import { Dictionary, KeyValuePair, Named, ReactComponentClass, RouteBinder, RouteSolver } from "../types";
 
 /**
  * A RouteSolver factory which allows for components to be bound
