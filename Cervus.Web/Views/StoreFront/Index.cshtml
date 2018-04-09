@@ -1,0 +1,18 @@
+@using Cervus.Web.Extensions;
+@using Cervus.Web.Models.StoreFront;
+@using Newtonsoft.Json;
+@model IndexModel
+@inject JsonSerializerSettings SerializerSettings
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id='store-front-app'>Loading...</div>
+
+@section scripts {
+    @* The uris property is injected by the model into the code directly. *@
+    <script src='~/dist/storeFront.js' asp-append-version='true'
+            uris='@Model.Uris.ToJson(SerializerSettings)'
+            apiUrl='@Model.ContentApi'></script>
+}
