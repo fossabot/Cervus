@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Context } from "./iocContext";
+import { Context } from "./ioc/iocContext";
 import { Container, interfaces } from "inversify";
 import getDecorators from "inversify-inject-decorators";
 import { AppContainer } from "react-hot-loader";
@@ -65,7 +65,7 @@ export class ReactAppStarter {
                 <AppContainer>
                     <BrowserRouter children={entryPointNode} basename={baseUrl} />
                 </AppContainer>,
-                document.getElementById("storeFront-app"));
+                document.getElementById(this.appComponentId));
         });
     }
 

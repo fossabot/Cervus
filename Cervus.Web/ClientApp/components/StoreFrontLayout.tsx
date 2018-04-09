@@ -1,6 +1,6 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
-import * as BindingConstants from "../ioc/BindingConstants";
+import * as BindingConstants from "../ioc/bindingConstants";
 import { NavMenu } from "./NavMenu";
 import { DefaultReactProps } from "../types";
 

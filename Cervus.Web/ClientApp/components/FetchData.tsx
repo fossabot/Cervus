@@ -1,8 +1,8 @@
 import "isomorphic-fetch";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
-import { Context } from "../iocContext";
-import * as BindingConstants from "../ioc/BindingConstants";
+import * as BindingConstants from "../ioc/bindingConstants";
+import { Context } from "../ioc/iocContext";
 import { ApiInfo } from "../utils/ApiInfo";
 
 interface ChuckNorrisJokeState {

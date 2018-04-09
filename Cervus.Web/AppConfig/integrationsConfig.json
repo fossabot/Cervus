@@ -1,0 +1,12 @@
+﻿{
+  "Integrations": {
+    "Content": {
+      "Assembly": "Cervus.Content.Wire",
+      "Module": "ContentIntegratedAutofac"
+    },
+    "Context": {
+      "Assembly": "Cervus.Context.Wire",
+      "Module": "ContextIntegratedAutofac"
+    }
+  }
+}
