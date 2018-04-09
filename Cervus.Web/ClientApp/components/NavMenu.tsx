@@ -14,6 +14,7 @@ export class NavMenu extends React.Component<DefaultReactProps, {}> {
     private readonly routeResolver: RouteSolver;
 
     public render() {
+        const homeAction = this.routeResolver.action(Home);
         return <div className="main-nav">
             <div className="navbar navbar-inverse">
                 <div className="navbar-header">
@@ -24,13 +25,13 @@ export class NavMenu extends React.Component<DefaultReactProps, {}> {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
-                    <Link className="navbar-brand" to={"/"}>Cervus.Web</Link>
+                    <Link className="navbar-brand" to={homeAction}>Cervus.Web</Link>
                 </div>
                 <div className="clearfix"></div>
                 <div className="navbar-collapse collapse">
                     <ul className="nav navbar-nav">
                         <li>
-                            <NavLink to={this.routeResolver.action(Home)} exact activeClassName="active">
+                            <NavLink to={homeAction} exact activeClassName="active">
                                 <span className="glyphicon glyphicon-home"></span> Home
                             </NavLink>
                         </li>

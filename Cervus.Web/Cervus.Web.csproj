@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,8 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CustomConfigs\" />
     <Folder Include="ServerApp\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cervus.Content.Interfaces\Cervus.Content.Interfaces.csproj" />
+    <ProjectReference Include="..\Cervus.Content.Wire\Cervus.Content.Wire.csproj" />
+    <ProjectReference Include="..\Cervus.Context.Wire\Cervus.Context.Wire.csproj" />
+    <ProjectReference Include="..\IndependentUtils.Assembly\IndependentUtils.Assembly.csproj" />
+    <ProjectReference Include="..\InjectableRoutes.AspNetCore\InjectableRoutes.AspNetCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>
