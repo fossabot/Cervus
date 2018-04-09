@@ -1,17 +1,20 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "jsx": "react",
-    "sourceMap": true,
+    "lib": [ "dom", "es6", "scripthost" ],
+    "module": "commonjs",
+    "moduleResolution": "node",
     "skipDefaultLibCheck": true,
+    "sourceMap": true,
     "strict": true,
-    "types": ["webpack-env"]
+    "target": "es5",
+    "types": [ "webpack-env", "reflect-metadata" ]
   },
   "exclude": [
-      "bin",
-      "node_modules"
+    "bin",
+    "node_modules"
   ]
 }

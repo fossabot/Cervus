@@ -1,0 +1,22 @@
+﻿{
+  "extends": [ "tslint:latest", "tslint-react" ],
+  "rules": {
+    // override rules here
+    "arrow-parens": [ true, "ban-single-arg-parens" ],
+    "interface-name": [ true, "never-prefix" ],
+    "trailing-comma": [
+      true,
+      {
+        "esSpecCompliant": true
+      }
+    ],
+    "max-line-length": {
+      "options": [ 120 ]
+    }
+  },
+  "jsRules": {
+    "max-line-length": {
+      "options": [ 120 ]
+    }
+  }
+}
