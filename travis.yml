@@ -1,0 +1,17 @@
+language: csharp
+dist: trusty
+sudo: false
+mono: none
+dotnet: 2.0.0
+install:
+  - dotnet restore
+  - nvm install 8.0.0
+  - nvm use 8.0.0
+  - npm install
+script:
+  - dotnet test
+  - npm test
+after_success:
+  - echo dotnet test and npm test succeeded
+after_failure:
+  - echo dotnet test or npm test failed
