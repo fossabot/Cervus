@@ -19,15 +19,15 @@
 
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Compile Remove="ServerApp\**" />
     <Content Remove="ClientApp\**" />
+    <Content Remove="ServerApp\**" />
+    <EmbeddedResource Remove="ServerApp\**" />
+    <None Remove="ServerApp\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="ClientApp\utils\appStoreRoutingConfig.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ServerApp\" />
   </ItemGroup>
 
   <ItemGroup>
