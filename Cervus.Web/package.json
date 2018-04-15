@@ -32,10 +32,11 @@
     "webpack-hot-middleware": "2.18.2"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
     "tslint": "^5.9.1",
     "tslint-react": "^3.5.1"
   },
-  "name": "Cervus.Web",
+  "name": "Cervus",
   "private": true,
   "version": "0.0.0"
 }
