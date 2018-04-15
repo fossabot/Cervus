@@ -1,13 +1,15 @@
 language: csharp
+solution: Cervus.sln
 dist: trusty
-sudo: false
+sudo: required
 mono: none
 dotnet: 2.0.0
 install:
   - dotnet restore
   - cd Cervus.Web
   - npm install
-solution: Cervus.sln
+script:
+  - dotnet build
 
 # script:
 #   - dotnet test
