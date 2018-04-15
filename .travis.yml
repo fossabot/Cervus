@@ -5,7 +5,7 @@ mono: none
 dotnet: 2.0.0
 solution: Cervus.sln
 install:
-  - dotnet restore && dotnet build
+  - dotnet restore
   # - cd Cervus.Web
   - npm install
 
