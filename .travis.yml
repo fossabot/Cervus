@@ -6,8 +6,10 @@ dotnet: 2.0.0
 solution: Cervus.sln
 install:
   - dotnet restore
-  # - cd Cervus.Web
+  - cd Cervus.Web
   - npm install
+script:
+  - dotnet build
 
 # script:
 #   - dotnet test
