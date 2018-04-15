@@ -3,10 +3,12 @@ dist: trusty
 sudo: false
 mono: none
 dotnet: 2.0.0
+solution: Cervus.sln
 install:
-  - dotnet restore
-  - cd Cervus.Web
+  - dotnet restore && dotnet build
+  # - cd Cervus.Web
   - npm install
+
 # script:
 #   - dotnet test
 #   - npm test
