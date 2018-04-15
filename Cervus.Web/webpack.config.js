@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 const Manifest = require('./wwwroot/dist/vendor-manifest.json');
 
 const bundleOutputDir = './wwwroot/dist';
