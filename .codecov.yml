@@ -1,0 +1,13 @@
+
+coverage:
+  round: nearest
+  range: 70..100
+  precision: 5
+
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default
+  require_changes: false
+  require_base: no
+  require_head: yes
+  branches: null
