@@ -1,4 +1,5 @@
-﻿using Autofac;
+using System.Globalization;
+using Autofac;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -10,8 +11,10 @@ namespace Cervus.Web.AppStart.Autofac
         {
             base.Load(builder);
 
-            var settings = new JsonSerializerSettings();
-            settings.ContractResolver = new CamelCaseJsonSerializerSettings();
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCaseJsonSerializerSettings()
+            };
 
             builder
                 .RegisterInstance(settings)
@@ -23,7 +26,11 @@ namespace Cervus.Web.AppStart.Autofac
         {
             protected override string ResolvePropertyName(string propertyName)
             {
-                var firstLetterLowerCase = propertyName[0].ToString().ToLowerInvariant();
+                var invariantCulture = CultureInfo.InvariantCulture;
+                var firstLetterLowerCase = propertyName[0]
+                    .ToString(invariantCulture)
+                    .ToLower(invariantCulture);
+
                 var restOfTheWord = propertyName.Substring(1);
 
                 return $"{firstLetterLowerCase}{restOfTheWord}";

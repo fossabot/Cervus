@@ -1,9 +1,9 @@
+using System.Diagnostics;
+using System.Linq;
 using Cervus.Content.Interfaces;
 using Cervus.Context;
 using Cervus.Web.Models.StoreFront;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using System.Linq;
 
 namespace Cervus.Web.Controllers
 {
@@ -23,7 +23,7 @@ namespace Cervus.Web.Controllers
         {
             var uris = _storeFrontBindings
                 .GetUris(_serverContext.DomainInfo)
-                .ToDictionary(t => t.Id, t => t.Uri);
+                .ToDictionary(t => t.Id, t => t.PathFragment);
 
             var model = new IndexModel(uris, "https://api.chucknorris.io");
             return View(model);

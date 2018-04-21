@@ -1,6 +1,6 @@
-﻿using Autofac;
-using Cervus.Web.AppStart.Routes;
 using System;
+using Autofac;
+using Cervus.Web.AppStart.Routes;
 
 namespace Cervus.Web.AppStart.Autofac
 {

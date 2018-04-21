@@ -1,6 +1,6 @@
-﻿using Cervus.Content.Interfaces.Models;
-using Cervus.Context.Interfaces.WebDomain.Models;
 using System.Collections.Generic;
+using Cervus.Content.Interfaces.Models;
+using Cervus.Context.Interfaces.WebDomain.Models;
 
 namespace Cervus.Content.Interfaces
 {

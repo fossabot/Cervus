@@ -1,3 +1,4 @@
+using System.IO;
 using Autofac;
 using Cervus.Web.AppStart.Autofac;
 using Cervus.Web.AppStart.Configuration.Models;
@@ -10,7 +11,6 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using System.IO;
 
 namespace Cervus.Web.AppStart.AppModules
 {

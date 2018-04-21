@@ -1,6 +1,6 @@
-﻿using Autofac;
-using Cervus.Content.Dummy;
 using System;
+using Autofac;
+using Cervus.Content.Dummy;
 
 namespace Cervus.Content.Wire
 {

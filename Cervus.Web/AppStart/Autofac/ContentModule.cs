@@ -1,7 +1,7 @@
-﻿using Autofac;
+using System;
+using Autofac;
 using Cervus.Web.AppStart.Autofac.Helpers;
 using Cervus.Web.AppStart.Configuration.Models;
-using System;
 
 namespace Cervus.Web.AppStart.Autofac
 {

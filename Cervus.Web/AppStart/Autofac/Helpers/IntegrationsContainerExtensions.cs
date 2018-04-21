@@ -1,8 +1,8 @@
-﻿using Autofac.Core;
-using Cervus.Web.AppStart.Configuration.Models;
-using IndependentUtils.Assembly;
 using System;
 using System.Linq;
+using Autofac.Core;
+using Cervus.Web.AppStart.Configuration.Models;
+using IndependentUtils.Assembly;
 
 namespace Cervus.Web.AppStart.Autofac.Helpers
 {

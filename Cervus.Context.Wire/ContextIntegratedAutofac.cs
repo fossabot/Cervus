@@ -1,6 +1,6 @@
-﻿using Autofac;
-using Cervus.Context.AspNetCore;
 using System;
+using Autofac;
+using Cervus.Context.AspNetCore;
 
 namespace Cervus.Context.Wire
 {

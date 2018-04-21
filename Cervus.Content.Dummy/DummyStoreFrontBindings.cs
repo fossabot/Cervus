@@ -1,7 +1,7 @@
-﻿using Cervus.Content.Interfaces;
+using System.Collections.Generic;
+using Cervus.Content.Interfaces;
 using Cervus.Content.Interfaces.Models;
 using Cervus.Context.Interfaces.WebDomain.Models;
-using System.Collections.Generic;
 
 namespace Cervus.Content.Dummy
 {

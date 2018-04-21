@@ -1,17 +1,17 @@
-﻿namespace Cervus.Content.Interfaces.Models
+namespace Cervus.Content.Interfaces.Models
 {
     public class ComponentUri
     {
         private readonly string _id;
-        private readonly string _uri;
+        private readonly string _pathFragment;
 
         public string Id => _id;
-        public string Uri => _uri;
+        public string PathFragment => _pathFragment;
 
-        public ComponentUri(string id, string uri)
+        public ComponentUri(string id, string pathFragment)
         {
             _id = id;
-            _uri = uri;
+            _pathFragment = pathFragment;
         }
     }
 }

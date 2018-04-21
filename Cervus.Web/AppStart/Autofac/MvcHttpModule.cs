@@ -1,6 +1,6 @@
-﻿using Autofac;
-using Microsoft.AspNetCore.Http;
 using System;
+using Autofac;
+using Microsoft.AspNetCore.Http;
 
 namespace Cervus.Web.AppStart.Autofac
 {

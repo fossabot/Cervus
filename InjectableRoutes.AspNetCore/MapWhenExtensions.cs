@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
 using System;
+using Microsoft.AspNetCore.Builder;
 
 namespace InjectableRoutes.AspNetCore
 {
