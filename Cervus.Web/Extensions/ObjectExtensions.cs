@@ -5,7 +5,7 @@ namespace Cervus.Web.Extensions
 {
     public static class ObjectExtensions
     {
-        public static string ToJson(this object instance, 
+        public static string ToJson(this object instance,
             JsonSerializerSettings jsonSerializerSettings)
         {
             if (instance == null)

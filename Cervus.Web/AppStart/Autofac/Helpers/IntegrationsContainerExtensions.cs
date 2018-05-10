@@ -8,13 +8,15 @@ namespace Cervus.Web.AppStart.Autofac.Helpers
 {
     public static class IntegrationsContainerExtensions
     {
-        public static IModule GetModule(this IntegrationsContainer integrationsContainer, 
+        public static IModule GetModule(
+            this IntegrationsContainer integrationsContainer,
             string integrationName)
         {
             if (integrationsContainer == null)
             {
                 throw new ArgumentNullException(nameof(integrationsContainer));
             }
+
             if (string.IsNullOrWhiteSpace(integrationName))
             {
                 throw new ArgumentNullException(nameof(integrationName));
@@ -28,7 +30,8 @@ namespace Cervus.Web.AppStart.Autofac.Helpers
                 .FirstOrDefault(t => t
                     .GetName()
                     .Name
-                    .IndexOf(assemblyName,
+                    .IndexOf(
+                        assemblyName,
                         StringComparison.InvariantCultureIgnoreCase) >= 0);
 
             if (referenceAssembly == null)

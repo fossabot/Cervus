@@ -1,0 +1,41 @@
+{
+    "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+    "settings": {
+        "documentationRules": {
+            "companyName": "HypeStudios",
+            "copyrightText": "Copyright (c) 2018 {companyName}. All Rights Reserved.\r\nLicensed under the MIT License. See LICENSE in the project root for license information.",
+            "xmlHeader": false,
+            "fileNamingConvention": "metadata",
+            "documentInterfaces": true,
+            "documentExposedElements": true,
+            "documentPrivateElements": false,
+            "documentPrivateFields": false,
+            "documentInternalElements": true,
+            "documentationCulture": "en-US"
+        },
+        "indentation": {
+            "indentationSize": 4,
+            "tabSize": 4,
+            "useTabs": false
+        },
+        "spacingRules": {
+
+        },
+        "readabilityRules": {
+
+        },
+        "orderingRules": {
+            "blankLinesBetweenUsingGroups": "omit",
+            "systemUsingDirectivesFirst": true,
+            "usingDirectivesPlacement": "preserve",
+            "elementOrder": [ "kind", "accessibility", "constant", "static", "readonly" ]
+        },
+        "layoutRules": {
+            "newlineAtEndOfFile": "require",
+            "allowConsecutiveUsings": true
+        },
+        "maintainabilityRules": {
+            "topLevelTypes": [ "class", "interface", "enum", "struct" ]
+        }
+    }
+}

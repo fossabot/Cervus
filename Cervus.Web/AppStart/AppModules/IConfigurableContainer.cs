@@ -1,8 +1,8 @@
-﻿using Autofac;
+using Autofac;
 
 namespace Cervus.Web.AppStart.AppModules
 {
-    interface IConfigurableContainer
+     public interface IConfigurableContainer
     {
         void ConfigureContainer(ContainerBuilder builder);
     }
