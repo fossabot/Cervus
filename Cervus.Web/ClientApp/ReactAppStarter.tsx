@@ -5,8 +5,9 @@ import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import { BrowserRouter } from "react-router-dom";
 
+import * as BindingConstants from "./ioc/bindingConstants";
 import { Lazy } from "./ioc/Lazy";
-import { ContainerModule, Dictionary, ReactEntryPointClass } from "./types";
+import { ContainerModule, Dictionary, DocumentUtils, ReactEntryPointClass } from "./types";
 
 /**
  * A generic React Application starter module that depends on an IoC container to initialize
@@ -15,23 +16,19 @@ import { ContainerModule, Dictionary, ReactEntryPointClass } from "./types";
  * start operation is called, will the application start properly.
  */
 export class ReactAppStarter {
-    private appComponentId: string;
     private readonly moduleLocation: string;
     private readonly moduleName: string;
 
     /**
      * Creates an instance of a ReactAppStarter which can start the react application. This
      * process can be initialized by calling the "start" method.
-     * @param {string} appComponentId The html id that refers to the element that will
-     * render the react-app.
      * @param {string} moduleLocation The location to the module that will contain the
      * default app configurations.
      * @param {string} moduleName The module's specific name that will be the class to
      * initialize the IoC. Remarks: This module must have a component bound to the keyword
      * "name" of the type {ReactEntryPointClass} as this will be the application's entry point.
      */
-    constructor(appComponentId: string, moduleLocation: string, moduleName: string) {
-        this.appComponentId = appComponentId;
+    constructor(moduleLocation: string, moduleName: string) {
         this.moduleLocation = moduleLocation;
         this.moduleName = moduleName;
     }
@@ -60,13 +57,16 @@ export class ReactAppStarter {
             // browser. It sets up the routing configuration and injects
             // the app into a DOM element.
             const entryPoint = container.get<ReactEntryPointClass>("main");
+            const appComponentId = container
+                .get<DocumentUtils>(BindingConstants.DocumentUtilsId)
+                .getAttributeString("app-id");
             const entryPointNode = React.createElement(entryPoint);
 
             ReactDOM.render(
                 <AppContainer>
                     <BrowserRouter children={entryPointNode} basename={baseUrl} />
                 </AppContainer>,
-                document.getElementById(this.appComponentId));
+                document.getElementById(appComponentId));
         });
     }
 

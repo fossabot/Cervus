@@ -1,4 +1,4 @@
-﻿import { Container } from "inversify";
+import { Container } from "inversify";
 import { ReactNode } from "react";
 
 import { StoreFront } from "../components/StoreFront";
@@ -22,7 +22,7 @@ export class StoreFrontModule implements ContainerModule {
 
         const apiInfo = new ApiInfo(container
             .get<DocumentUtils>(BindingConstants.DocumentUtilsId)
-            .getAttributeString("apiUrl"));
+            .getAttributeString("api-url"));
 
         container
             .bind<ApiInfo>(BindingConstants.ApiInfoId)

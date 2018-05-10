@@ -6,13 +6,15 @@
 
 @{
     ViewData["Title"] = "Home Page";
+    var storeFrontAppId = "store-front-app";
 }
 
-<div id='store-front-app'>Loading...</div>
+<div id='@storeFrontAppId'>Loading...</div>
 
 @section scripts {
     @* The uris property is injected by the model into the code directly. *@
     <script src='~/dist/storeFront.js' asp-append-version='true'
+            app-id='@storeFrontAppId'
             uris='@Model.Uris.ToJson(SerializerSettings)'
-            apiUrl='@Model.ContentApi'></script>
+            api-url='@Model.ContentApi'></script>
 }
