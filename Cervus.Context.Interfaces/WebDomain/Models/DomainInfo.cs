@@ -1,4 +1,4 @@
-﻿namespace Cervus.Context.WebDomain.Models
+﻿namespace Cervus.Context.Interfaces.WebDomain.Models
 {
     public class DomainInfo
     {
