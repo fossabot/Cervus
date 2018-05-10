@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import * as BindingConstants from "../ioc/BindingConstants";
+import * as BindingConstants from "../ioc/bindingConstants";
 import { Lazy } from "../ioc/Lazy";
 import { DefaultReactProps, RouteSolver } from "../types";
 import { Counter } from "./Counter";

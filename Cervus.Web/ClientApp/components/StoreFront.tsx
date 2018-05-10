@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Route, RouteComponentProps } from "react-router-dom";
 
-import * as BindingConstants from "../ioc/BindingConstants";
+import * as BindingConstants from "../ioc/bindingConstants";
 import { Lazy } from "../ioc/Lazy";
 import { DefaultReactProps, RouteBinder } from "../types";
 import { StoreFrontLayout } from "./StoreFrontLayout";
