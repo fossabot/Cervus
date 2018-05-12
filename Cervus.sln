@@ -11,21 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{91
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cervus.Context.Wire", "Cervus.Context.Wire\Cervus.Context.Wire.csproj", "{D9E49773-A189-40C1-AB46-A3327BA324B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cervus.Content.Dummy", "Cervus.Content.Dummy\Cervus.Content.Dummy.csproj", "{0ABD3D17-754C-43F5-9D80-8360D91837A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cervus.Content.Dummy", "Cervus.Content.Dummy\Cervus.Content.Dummy.csproj", "{0ABD3D17-754C-43F5-9D80-8360D91837A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cervus.Content.Interfaces", "Cervus.Content.Interfaces\Cervus.Content.Interfaces.csproj", "{36CB7168-8E3A-441C-9366-9B4B4FCA3428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cervus.Content.Interfaces", "Cervus.Content.Interfaces\Cervus.Content.Interfaces.csproj", "{36CB7168-8E3A-441C-9366-9B4B4FCA3428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cervus.Context.Interfaces", "Cervus.Context.Interfaces\Cervus.Context.Interfaces.csproj", "{8D9D237F-6148-4FD0-9BB6-7DB751BE9B32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cervus.Context.Interfaces", "Cervus.Context.Interfaces\Cervus.Context.Interfaces.csproj", "{8D9D237F-6148-4FD0-9BB6-7DB751BE9B32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndependentUtils.Assembly", "IndependentUtils.Assembly\IndependentUtils.Assembly.csproj", "{7456898C-2721-49C7-96BF-958797BDD050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndependentUtils.Assembly", "IndependentUtils.Assembly\IndependentUtils.Assembly.csproj", "{7456898C-2721-49C7-96BF-958797BDD050}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InjectableRoutes.AspNetCore", "InjectableRoutes.AspNetCore\InjectableRoutes.AspNetCore.csproj", "{104FB782-83D6-4C20-9F08-5E1CB0098A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cervus.Context.AspNetCore", "Cervus.Context.AspNetCore\Cervus.Context.AspNetCore.csproj", "{BB309A83-6DBF-4267-BD3F-B88B62E4C091}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cervus.Context.AspNetCore", "Cervus.Context.AspNetCore\Cervus.Context.AspNetCore.csproj", "{BB309A83-6DBF-4267-BD3F-B88B62E4C091}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cervus.Content.Wire", "Cervus.Content.Wire\Cervus.Content.Wire.csproj", "{8DE7DB57-917E-4A0E-A04C-1F31D363DF82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cervus.Content.Wire", "Cervus.Content.Wire\Cervus.Content.Wire.csproj", "{8DE7DB57-917E-4A0E-A04C-1F31D363DF82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cervus.Dummy.Tests", "Cervus.Dummy.Tests\Cervus.Dummy.Tests.csproj", "{9AD6E5E1-BC3C-4D4B-997C-AC9CC832B50B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cervus.Dummy.Tests", "Cervus.Dummy.Tests\Cervus.Dummy.Tests.csproj", "{9AD6E5E1-BC3C-4D4B-997C-AC9CC832B50B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cervus.Tests", "Cervus.Tests", "{D199F41E-9A56-4209-A085-82847DA63609}"
 EndProject

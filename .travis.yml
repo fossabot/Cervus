@@ -10,7 +10,7 @@ install:
   - npm install
 script:
   - dotnet build
-  - dotnet test
+  - dotnet test Cervus.Dummy.Tests/Cervus.Dummy.Tests.csproj
 #   - npm test
 after_success:
     - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
