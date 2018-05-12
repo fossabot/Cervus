@@ -33,6 +33,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Cervus.Content.Interfaces\Cervus.Content.Interfaces.csproj" />
     <ProjectReference Include="..\Cervus.Content.Wire\Cervus.Content.Wire.csproj" />
+    <ProjectReference Include="..\Cervus.Context.Interfaces\Cervus.Context.Interfaces.csproj" />
     <ProjectReference Include="..\Cervus.Context.Wire\Cervus.Context.Wire.csproj" />
     <ProjectReference Include="..\IndependentUtils.Assembly\IndependentUtils.Assembly.csproj" />
     <ProjectReference Include="..\InjectableRoutes.AspNetCore\InjectableRoutes.AspNetCore.csproj" />

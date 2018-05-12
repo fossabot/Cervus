@@ -2,7 +2,7 @@ import "isomorphic-fetch";
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 
-import * as BindingConstants from "../ioc/BindingConstants";
+import * as BindingConstants from "../ioc/bindingConstants";
 import { Lazy } from "../ioc/Lazy";
 import { ApiInfo } from "../utils/ApiInfo";
 

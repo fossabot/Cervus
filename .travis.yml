@@ -1,0 +1,20 @@
+language: csharp
+solution: Cervus.sln
+dist: trusty
+sudo: required
+mono: none
+dotnet: 2.0.0
+install:
+  - dotnet restore
+  - cd Cervus.Web
+  - npm install
+script:
+  - dotnet build
+
+# script:
+#   - dotnet test
+#   - npm test
+# after_success:
+#   - echo dotnet test and npm test succeeded
+# after_failure:
+#   - echo dotnet test or npm test failed

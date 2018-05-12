@@ -1,4 +1,4 @@
-﻿using Cervus.Context.WebDomain.Models;
+﻿using Cervus.Context.Interfaces.WebDomain.Models;
 
 namespace Cervus.Context
 {
