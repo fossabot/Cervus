@@ -1,4 +1,4 @@
-﻿using Cervus.Context.WebDomain.Models;
+﻿using Cervus.Context.Interfaces.WebDomain.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace Cervus.Context.AspNetCore
