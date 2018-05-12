@@ -10,11 +10,10 @@ install:
   - npm install
 script:
   - dotnet build
-
-# script:
-#   - dotnet test
+  - dotnet test
 #   - npm test
-# after_success:
-#   - echo dotnet test and npm test succeeded
-# after_failure:
-#   - echo dotnet test or npm test failed
+after_success:
+    - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
+    - echo dotnet test and npm test succeeded
+after_failure:
+    - echo dotnet test or npm test failed
